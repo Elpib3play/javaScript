@@ -37,9 +37,7 @@ function platodCarta(){
     console.log("4- Compraré en otro momento(SALIR)...")
     console.log("**************************");
     console.log("**************************");
-    
     let operacion = prompt("Ingrese el número de menú a elegir")
-
     switch (operacion){
         case "1":
             console.log("Milanesa con papas fritas" + " el valor es: " + milanesas);
@@ -63,10 +61,11 @@ function platodCarta(){
     }
 }
 
-
 function tipoDePago(){
     let pago= prompt("Ingrese si es mercadopago o efectivo");
-    if (pago ==="mercadopago"||"efectivo"){
+    let mp="mercadopago";
+    let ef="efectivo";
+    if (pago === mp||pago===ef){
         let dinero = Number( prompt("Ingrese el dinero de mercadopago"+" $" +milanesas));
         if(milanesas < dinero || milanesas > dinero ){
             alert ("ingrese la cifra correcta, " + "el valor es " + milanesas);
@@ -84,10 +83,11 @@ function tipoDePago(){
         alert(tipoDePago());
     }
 }
-
 function tipoDePlatopizza(){
-    let pago=prompt("Ingrese si es mercadopago o efectivo");
-    if (pago ==="mercadopago"||"efectivo"){
+    let pago= prompt("Ingrese si es mercadopago o efectivo");
+    let mp="mercadopago";
+    let ef="efectivo";
+    if (pago === mp||pago===ef){
         let dinero = Number( prompt("Ingrese el dinero de mercadopago  " +" $" +pizza));
         if(pizza < dinero || pizza > dinero ){
             alert ("ingrese la cifra correcta, " + "el valor es " + pizza);
@@ -106,8 +106,10 @@ function tipoDePlatopizza(){
     }
 }
 function tipoDePlatoempanada(){
-    let pago=prompt("Ingrese si es mercadopago o efectivo");
-    if (pago ==="mercadopago"||"efectivo"){
+    let pago= prompt("Ingrese si es mercadopago o efectivo");
+    let mp="mercadopago";
+    let ef="efectivo";
+    if (pago === mp||pago===ef){
         let dinero = Number( prompt("Ingrese el dinero de mercadopago"+" $" +empanada));
         if(empanada< dinero || empanada > dinero ){
             alert ("ingrese la cifra correcta, " + "el valor es " + empanada);
@@ -125,7 +127,6 @@ function tipoDePlatoempanada(){
         alert(tipoDePago());
     }
 }
-
 function salir(){
     alert ("Hasta proto , lo esperamos para una futura compra...")
     console.log("fin del algoritmo");
