@@ -128,7 +128,7 @@ function tipoDePlatoempanada(){
     }
 }
 function salir(){
-    alert ("Hasta proto , lo esperamos para una futura compra...")
+    alert ("Hasta pronto , lo esperamos para una futura compra...")
     console.log("fin del algoritmo");
 }
 
