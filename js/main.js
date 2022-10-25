@@ -4,14 +4,14 @@ let empanada= 2000;
 let miTel="";
 
 
-function Bienvenida(){
+function bienvenida(){
     alert ("Bienvenidos a Platos Del Día");
     let registrado=confirm ("Usted está registrado?");
     if(registrado==true){
         acceso();   
     }else{
         alert("por favor registrese para poder tomar su pedido. Gracias")
-        alert (Bienvenida());
+        alert (bienvenida());
     }   
 }
 
@@ -28,7 +28,7 @@ function acceso(){
 function platodCarta(){
     console.log("**************************");
     console.log("**************************");
-    console.log("****MENUES DE LA CASA*****");
+    console.log("****MENU DE LA CASA*****");
     console.log("**************************");
     console.log("**************************");
     console.log("1- Milanesas con papas fritas");
@@ -66,7 +66,7 @@ function platodCarta(){
 
 function tipoDePago(){
     let pago= prompt("Ingrese si es mercadopago o efectivo");
-    if (pago =="mercadopago"||"efectivo"){
+    if (pago ==="mercadopago"||"efectivo"){
         let dinero = Number( prompt("Ingrese el dinero de mercadopago"+" $" +milanesas));
         if(milanesas < dinero || milanesas > dinero ){
             alert ("ingrese la cifra correcta, " + "el valor es " + milanesas);
@@ -75,7 +75,7 @@ function tipoDePago(){
             alert ("muchas gracias, por su compra!!")
             alert(" En caso de demora nos estaremos comunicando al " + miTel)
             console.log("fin del algoritmo");
-        }if (pago== "Efectivo") {
+        }if (pago==="efectivo") {
             alert("recuerde tener el efectivo ni bien llegue el DELIVERY " + " el valor es " + milanesas);
             console.log("fin del algoritmo");
         }
@@ -87,7 +87,7 @@ function tipoDePago(){
 
 function tipoDePlatopizza(){
     let pago=prompt("Ingrese si es mercadopago o efectivo");
-    if (pago =="mercadopago"||"efectivo"){
+    if (pago ==="mercadopago"||"efectivo"){
         let dinero = Number( prompt("Ingrese el dinero de mercadopago  " +" $" +pizza));
         if(pizza < dinero || pizza > dinero ){
             alert ("ingrese la cifra correcta, " + "el valor es " + pizza);
@@ -96,7 +96,7 @@ function tipoDePlatopizza(){
             alert ("muchas gracias, por su compra!!");
             alert(" En caso de demora nos estaremos comunicando al " + miTel)
             console.log("fin del algoritmo");
-        }if(pago=="efectivo"){
+        }if(pago==="efectivo"){
             alert("recuerde tener el efectivo ni bien llegue el DELIVERY " + " el valor es " + pizza)
             console.log("fin del algoritmo");
         }
@@ -107,7 +107,7 @@ function tipoDePlatopizza(){
 }
 function tipoDePlatoempanada(){
     let pago=prompt("Ingrese si es mercadopago o efectivo");
-    if (pago =="mercadopago"||"efectivo"){
+    if (pago ==="mercadopago"||"efectivo"){
         let dinero = Number( prompt("Ingrese el dinero de mercadopago"+" $" +empanada));
         if(empanada< dinero || empanada > dinero ){
             alert ("ingrese la cifra correcta, " + "el valor es " + empanada);
@@ -116,7 +116,7 @@ function tipoDePlatoempanada(){
             alert ("muchas gracias, por su compra!!");
             alert(" En caso de demora nos estaremos comunicando al " + miTel)
             console.log("fin del algoritmo");
-        }if(pago=="efectivo"){
+        }if(pago==="efectivo"){
             alert("recuerde tener el efectivo ni bien llegue el DELIVERY " + " el valor es " + empanada)
             console.log("fin del algoritmo");
         }
@@ -131,4 +131,4 @@ function salir(){
     console.log("fin del algoritmo");
 }
 
-Bienvenida();
+bienvenida();
