@@ -38,7 +38,7 @@ function platodCarta(){
     console.log("**************************");
     console.log("**************************");
     
-    let operacion = prompt("Ingrese el número de menúa elegir")
+    let operacion = prompt("Ingrese el número de menú a elegir")
 
     switch (operacion){
         case "1":
