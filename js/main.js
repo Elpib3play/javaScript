@@ -71,7 +71,7 @@ function tipoDePago(){
         if(milanesas < dinero || milanesas > dinero ){
             alert ("ingrese la cifra correcta, " + "el valor es " + milanesas);
         }if(milanesas==dinero){
-            alert ("Hemos recibido su pago, su pedido se encuentra en proceso de elavoracion ... el tiempo de envío es de 30 a 45 minutos ");
+            alert ("Hemos recibido su pago, su pedido se encuentra en proceso de elaboracion ... el tiempo de envío es de 30 a 45 minutos ");
             alert ("muchas gracias, por su compra!!")
             alert(" En caso de demora nos estaremos comunicando al " + miTel)
             console.log("fin del algoritmo");
@@ -92,7 +92,7 @@ function tipoDePlatopizza(){
         if(pizza < dinero || pizza > dinero ){
             alert ("ingrese la cifra correcta, " + "el valor es " + pizza);
         }if(pizza==dinero){
-            alert ("Hemos recibido su pago, su pedido se encuentra en proceso de elavoracion ... el tiempo de envío es de 30 a 45 minutos ");
+            alert ("Hemos recibido su pago, su pedido se encuentra en proceso de elaboracion ... el tiempo de envío es de 30 a 45 minutos ");
             alert ("muchas gracias, por su compra!!");
             alert(" En caso de demora nos estaremos comunicando al " + miTel)
             console.log("fin del algoritmo");
@@ -112,7 +112,7 @@ function tipoDePlatoempanada(){
         if(empanada< dinero || empanada > dinero ){
             alert ("ingrese la cifra correcta, " + "el valor es " + empanada);
         }if(empanada==dinero){
-            alert ("Hemos recibido su pago, su pedido se encuentra en proceso de elavoracion ... el tiempo de envío es de 30 a 45 minutos ");
+            alert ("Hemos recibido su pago, su pedido se encuentra en proceso de elaboracion ... el tiempo de envío es de 30 a 45 minutos ");
             alert ("muchas gracias, por su compra!!");
             alert(" En caso de demora nos estaremos comunicando al " + miTel)
             console.log("fin del algoritmo");
