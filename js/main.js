@@ -1,3 +1,4 @@
+
 let milanesas=2500;
 let pizza=1500;
 let empanada= 2000;
@@ -26,21 +27,28 @@ function acceso(){
 }
 
 function platodCarta(){
-    console.log("**************************");
-    console.log("**************************");
-    console.log("****MENU DE LA CASA*****");
-    console.log("**************************");
-    console.log("**************************");
-    console.log("1- Milanesas con papas fritas");
-    console.log("2- Pizza Muzzarella");
-    console.log("3- Empanadas Salteñas");
-    console.log("4- Compraré en otro momento(SALIR)...")
-    console.log("**************************");
-    console.log("**************************");
+    const PlatosDeComida=[
+    {
+    plato:"1) Milanesa",
+    precio:2500
+    },
+    {
+    plato:"2) Pizza",
+    precio:1500
+    },
+    {
+    plato:"3) Empanada",
+    precio:2000
+}];
+
+let platosDecomidasArray=PlatosDeComida.map((PlatosDeComida) => PlatosDeComida.plato+ " $"+PlatosDeComida.precio+ " ")
+alert(platosDecomidasArray.join ("- "));
+
+
     let operacion = prompt("Ingrese el número de menú a elegir")
     switch (operacion){
         case "1":
-            console.log("Milanesa con papas fritas" + " el valor es: " + milanesas);
+            console.log("Milanesa con papas fritas" + " el valor es: " +milanesas);
             tipoDePago();
             break;
         case "2":
@@ -131,5 +139,6 @@ function salir(){
     alert ("Hasta pronto , lo esperamos para una futura compra...")
     console.log("fin del algoritmo");
 }
+
 
 bienvenida();
