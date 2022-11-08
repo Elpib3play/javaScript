@@ -14,8 +14,6 @@ nav{
     display: flex;
     justify-content:space-between;
     align-items: center;
-    
- 
     background-color: black;
 }
 .logo{
@@ -26,7 +24,6 @@ nav{
 li{
     display: flex;
     justify-content: space-evenly;
-    
     width: 1000px;
     background-image: linear-gradient(to left, rgb(148, 25, 179), yellow);
     border: 2px solid rgba(25, 102, 102, 0.562);
@@ -35,7 +32,6 @@ ul{
     display: flex;
     align-items: flex-start;
     text-align: start;
-
 }
 a{  
     
