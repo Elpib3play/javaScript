@@ -4,7 +4,6 @@ let pizza=1500;
 let empanada= 2000;
 let miTel="";
 
-
 function bienvenida(){
     alert ("Bienvenidos a Platos Del Día");
     let registrado=confirm ("Usted está registrado?");
@@ -39,9 +38,6 @@ const PlatosDeComida=[
     plato:"3) Empanada",
     precio:2000
 }];
-
-
-
 
 function platodCarta(){
     let platosDecomidasArray=PlatosDeComida.map((PlatosDeComida) => PlatosDeComida.plato+ " $"+PlatosDeComida.precio+ " ")
