@@ -1,3 +1,51 @@
 body{
-    background-color: aquamarine;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(255, 255, 255);
+}
+
+h1{
+    display: flex;
+    justify-content: center;
+    font-size: 60px;
+    color: yellow;
+}
+nav{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    
+ 
+    background-color: black;
+}
+.logo{
+    height: 130px;
+    width: 150px;
+
+}
+li{
+    display: flex;
+    justify-content: space-evenly;
+    
+    width: 1000px;
+    background-image: linear-gradient(to left, rgb(148, 25, 179), yellow);
+    border: 2px solid rgba(25, 102, 102, 0.562);
+}
+ul{
+    display: flex;
+    align-items: flex-start;
+    text-align: start;
+
+}
+a{  
+    
+    margin-right: 10px;
+    font-size: large;
+    color: black;
+    text-align: ;
+    text-decoration: none;
+}
+a:hover{
+    
+    color: rgb(0, 4, 255);
 }
