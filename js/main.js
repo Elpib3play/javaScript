@@ -26,8 +26,7 @@ function acceso(){
     return miTel;
 }
 
-function platodCarta(){
-    const PlatosDeComida=[
+const PlatosDeComida=[
     {
     plato:"1) Milanesa",
     precio:2500
@@ -41,10 +40,12 @@ function platodCarta(){
     precio:2000
 }];
 
-let platosDecomidasArray=PlatosDeComida.map((PlatosDeComida) => PlatosDeComida.plato+ " $"+PlatosDeComida.precio+ " ")
-alert(platosDecomidasArray.join ("- "));
 
 
+
+function platodCarta(){
+    let platosDecomidasArray=PlatosDeComida.map((PlatosDeComida) => PlatosDeComida.plato+ " $"+PlatosDeComida.precio+ " ")
+    alert(platosDecomidasArray.join ("- "));
     let operacion = prompt("Ingrese el número de menú a elegir")
     switch (operacion){
         case "1":
@@ -81,10 +82,10 @@ function tipoDePago(){
             alert ("Hemos recibido su pago, su pedido se encuentra en proceso de elaboracion ... el tiempo de envío es de 30 a 45 minutos ");
             alert ("muchas gracias, por su compra!!")
             alert(" En caso de demora nos estaremos comunicando al " + miTel)
-            console.log("fin del algoritmo");
+            console.log("Pedido registrado");
         }if (pago==="efectivo") {
             alert("recuerde tener el efectivo ni bien llegue el DELIVERY " + " el valor es " + milanesas);
-            console.log("fin del algoritmo");
+            console.log("Pedido registrado");
         }
     }else{
         alert("por favor ingrese un dato correcto");
@@ -103,10 +104,10 @@ function tipoDePlatopizza(){
             alert ("Hemos recibido su pago, su pedido se encuentra en proceso de elaboracion ... el tiempo de envío es de 30 a 45 minutos ");
             alert ("muchas gracias, por su compra!!");
             alert(" En caso de demora nos estaremos comunicando al " + miTel)
-            console.log("fin del algoritmo");
+            console.log("Pedido registrado");
         }if(pago==="efectivo"){
             alert("recuerde tener el efectivo ni bien llegue el DELIVERY " + " el valor es " + pizza)
-            console.log("fin del algoritmo");
+            console.log("Pedido registrado");
         }
     }else{
         alert("por favor ingrese un dato correcto");
@@ -125,10 +126,10 @@ function tipoDePlatoempanada(){
             alert ("Hemos recibido su pago, su pedido se encuentra en proceso de elaboracion ... el tiempo de envío es de 30 a 45 minutos ");
             alert ("muchas gracias, por su compra!!");
             alert(" En caso de demora nos estaremos comunicando al " + miTel)
-            console.log("fin del algoritmo");
+            console.log("Pedido registrado");
         }if(pago==="efectivo"){
             alert("recuerde tener el efectivo ni bien llegue el DELIVERY " + " el valor es " + empanada)
-            console.log("fin del algoritmo");
+            console.log("Pedido registrado");
         }
     }else{
         alert("por favor ingrese un dato correcto");
@@ -137,7 +138,7 @@ function tipoDePlatoempanada(){
 }
 function salir(){
     alert ("Hasta pronto , lo esperamos para una futura compra...")
-    console.log("fin del algoritmo");
+    console.log("Compra efectuada");
 }
 
 
