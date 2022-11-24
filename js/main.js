@@ -1,141 +1,204 @@
+const shopContent= document.getElementById ("shopContent");
+const carritoDeCompras= document.getElementById ("verCarrito");
+const modalContainer= document.getElementById("modal-container");
+const cantidadCarrito=document.getElementById("cantidadCarrito");
 
-let milanesas=2500;
-let pizza=1500;
-let empanada= 2000;
-let miTel="";
+//MIS PRODUCTOS
+const productos = [{
+    tipo_comida: "Pizza",
+    precio: 1500,
+    id:1,
+    src:"https://media.istockphoto.com/id/848661766/es/foto/la-fresca-pizza-al-horno-con-salami-en-plato-blanco.jpg?s=612x612&w=0&k=20&c=GK_NG_6b7UpMNdOcU6_a-IJdKQoMEk4Jg6mxie468lU=",
+    valorCantidad:1, 
+  },
+  {
+    tipo_comida: "Empanada",
+    precio: 300,
+    id:2,
+    src:"https://media.istockphoto.com/id/1171946922/es/foto/empanadas.jpg?b=1&s=170667a&w=0&k=20&c=O59fCoJ8vOkSBi3jiXP-Cp9ynklskHO5Z7mD8wPl_nk=" ,  
+    valorCantidad:1,
+  },
+  {
+  tipo_comida: "Milanesa",
+  precio: 2000,
+  id:3,
+  src:"https://media.istockphoto.com/id/1389082623/es/foto/chuleta-de-cerdo-al-horno-con-patatas-fritas.jpg?s=612x612&w=0&k=20&c=cQcWxm3rv9T09oxE0d0-tm5XnBZftDEX-ZxWI7dBl7w=" ,  
+  valorCantidad:1,
+ },
+ {
+    tipo_comida: "Ravioles",
+    precio: 1800,
+    id:4,
+    src:"https://media.istockphoto.com/id/154961079/es/foto/ravioles-de-carne-de-res-en-salsa-de-tomate-carne.jpg?s=612x612&w=0&k=20&c=waYJ46ccfTRhe9P6BCCMY_TD970XV3FmZZRe8O1HrNA=" ,  
+    valorCantidad:1,
+   },
+];
 
-function bienvenida(){
-    alert ("Bienvenidos a Platos Del Día");
-    let registrado=confirm ("Usted está registrado?");
-    if(registrado==true){
-        acceso();   
-    }else{
-        alert("por favor registrese para poder tomar su pedido. Gracias")
-        alert (bienvenida());
-    }   
-}
+let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
-function acceso(){
-    let nombre= prompt("ingrese su nombre");
-    let apellido= prompt ("ingrese su apellido");
-    miTel= Number( prompt ("ingrese su teléfono de contacto"));
-    let datosdelapersona= ( nombre +" " +" "+ apellido );
-    alert ("Bienvenido" + " " + datosdelapersona + "! ... " +"Por favor ingrese su pedido");
-    platodCarta();
-    return miTel;
-}
+productos.forEach((product) => {
+    // dentro del document creo el elemento que sea div
+    let content=document.createElement("div");
+    content.className="card";
+    //con esto creo etiquetas html a mi html
+    content.innerHTML = `
+        <img src="${product.src}">
+        <h3>${product.tipo_comida}</h3>
+        <p class="price">${product.precio} $</p>
+    `;
+    //ingreso todo lo que esta en mi foreach
+    shopContent.append(content);
 
-const PlatosDeComida=[
-    {
-    plato:"1) Milanesa",
-    precio:2500
-    },
-    {
-    plato:"2) Pizza",
-    precio:1500
-    },
-    {
-    plato:"3) Empanada",
-    precio:2000
-}];
+    let comprar=document.createElement ("button");
+    comprar.innerText="comprar";
+    comprar.className="comprar";
 
-function platodCarta(){
-    let platosDecomidasArray=PlatosDeComida.map((PlatosDeComida) => PlatosDeComida.plato+ " $"+PlatosDeComida.precio+ " ")
-    alert(platosDecomidasArray.join ("- "));
-    let operacion = prompt("Ingrese el número de menú a elegir")
-    switch (operacion){
-        case "1":
-            console.log("Milanesa con papas fritas" + " el valor es: " +milanesas);
-            tipoDePago();
-            break;
-        case "2":
-            console.log("Pizza Muzzarella" + " el valor es: " + pizza);
-            tipoDePlatopizza();
-            break; 
-        case "3":
-        console.log("Docena de empanadas Salteñas" + " el valor es: " + empanada);
-        tipoDePlatoempanada();
-        break;
-        case "4":
-            salir();
-            break;
-        default:
-            alert("operación inválida");  
-            alert("Ingrese nuevamente la operación");
-            alert (platodCarta());  
-    }
-}
+    content.append(comprar);
 
-function tipoDePago(){
-    let pago= prompt("Ingrese si es mercadopago o efectivo");
-    let mp="mercadopago";
-    let ef="efectivo";
-    if (pago === mp||pago===ef){
-        let dinero = Number( prompt("Ingrese el dinero de mercadopago"+" $" +milanesas));
-        if(milanesas < dinero || milanesas > dinero ){
-            alert ("ingrese la cifra correcta, " + "el valor es " + milanesas);
-        }if(milanesas==dinero){
-            alert ("Hemos recibido su pago, su pedido se encuentra en proceso de elaboracion ... el tiempo de envío es de 30 a 45 minutos ");
-            alert ("muchas gracias, por su compra!!")
-            alert(" En caso de demora nos estaremos comunicando al " + miTel)
-            console.log("Pedido registrado");
-        }if (pago==="efectivo") {
-            alert("recuerde tener el efectivo ni bien llegue el DELIVERY " + " el valor es " + milanesas);
-            console.log("Pedido registrado");
+    // lo que me va a agregar detro de carrito
+    comprar.addEventListener("click", () =>{
+        //con esto logro sumar las cantidades con un true del repeat
+        const repeat= carrito.some ((repeatProduct)=> repeatProduct.id === product.id);
+        //if me suma otra cantidad en caso de que ya se encuentr el productoid, else me suma un nuevo producto escogido 
+        if (repeat ===true){
+            carrito.map((prod)=>{
+                if(prod.id === product.id){
+                    prod.valorCantidad++;
+                }
+            });
+        }else{
+            carrito.push({
+            id: product.id,
+            nombre:product.tipo_comida,
+            img: product.src,
+            precio: product.precio,
+            valorCantidad: product.valorCantidad,
+            });
         }
-    }else{
-        alert("por favor ingrese un dato correcto");
-        alert(tipoDePago());
-    }
-}
-function tipoDePlatopizza(){
-    let pago= prompt("Ingrese si es mercadopago o efectivo");
-    let mp="mercadopago";
-    let ef="efectivo";
-    if (pago === mp||pago===ef){
-        let dinero = Number( prompt("Ingrese el dinero de mercadopago  " +" $" +pizza));
-        if(pizza < dinero || pizza > dinero ){
-            alert ("ingrese la cifra correcta, " + "el valor es " + pizza);
-        }if(pizza==dinero){
-            alert ("Hemos recibido su pago, su pedido se encuentra en proceso de elaboracion ... el tiempo de envío es de 30 a 45 minutos ");
-            alert ("muchas gracias, por su compra!!");
-            alert(" En caso de demora nos estaremos comunicando al " + miTel)
-            console.log("Pedido registrado");
-        }if(pago==="efectivo"){
-            alert("recuerde tener el efectivo ni bien llegue el DELIVERY " + " el valor es " + pizza)
-            console.log("Pedido registrado");
-        }
-    }else{
-        alert("por favor ingrese un dato correcto");
-        alert(tipoDePago());
-    }
-}
-function tipoDePlatoempanada(){
-    let pago= prompt("Ingrese si es mercadopago o efectivo");
-    let mp="mercadopago";
-    let ef="efectivo";
-    if (pago === mp||pago===ef){
-        let dinero = Number( prompt("Ingrese el dinero de mercadopago"+" $" +empanada));
-        if(empanada< dinero || empanada > dinero ){
-            alert ("ingrese la cifra correcta, " + "el valor es " + empanada);
-        }if(empanada==dinero){
-            alert ("Hemos recibido su pago, su pedido se encuentra en proceso de elaboracion ... el tiempo de envío es de 30 a 45 minutos ");
-            alert ("muchas gracias, por su compra!!");
-            alert(" En caso de demora nos estaremos comunicando al " + miTel)
-            console.log("Pedido registrado");
-        }if(pago==="efectivo"){
-            alert("recuerde tener el efectivo ni bien llegue el DELIVERY " + " el valor es " + empanada)
-            console.log("Pedido registrado");
-        }
-    }else{
-        alert("por favor ingrese un dato correcto");
-        alert(tipoDePago());
-    }
-}
-function salir(){
-    alert ("Hasta pronto , lo esperamos para una futura compra...")
-    console.log("Compra efectuada");
-}
+        console.log(carrito);
+        console.log(carrito.length);
+        carritoContenido();
+        guardadoLocal();
+    });
+});
 
 
-bienvenida();
+//carrito de compras
+
+const pintarCarrito = () =>{
+
+    //no replico la misma info ya que limpio el carrito
+    modalContainer.innerHTML="";
+    //cierro y abro mi carrito
+    modalContainer.style.display="flex";
+
+    const modalHeader =document.createElement ("div");
+    modalHeader.className= "modal-header"
+    modalHeader.innerHTML=`
+        <h1 class="modal-header-title"> Carrito. </h1>
+    `;
+
+    modalContainer.append(modalHeader);
+
+    const modalbutton=document.createElement ("h1");
+    modalbutton.innerText = "X";
+    modalbutton.className= "modal-header-button";
+    modalHeader.append(modalbutton);
+    
+    //cierro mi modal
+    modalbutton.addEventListener("click" ,() =>{
+        modalContainer.style.display="none";
+    });
+
+    carrito.forEach((product)=>{
+    let carritoContenido=document.createElement("div");
+    carritoContenido.className="modal-content"
+    carritoContenido.innerHTML=`
+        <img src="${product.img}">
+        <p>${product.nombre}</p>
+        <h3>${product.precio} $</h3>
+        <span class="restar"> - </span>
+        <p>Cantidad: ${product.valorCantidad}</p>
+        <span class="sumar"> + </span>
+        <p>Total: ${product.valorCantidad*product.precio}</p>
+    `;
+
+    modalContainer.append(carritoContenido);
+
+    //capturo eventos de botones sumo o resto del modal
+    let restar= carritoContenido.querySelector (".restar");   
+    restar.addEventListener("click", ( ) => {
+        if(product.valorCantidad!==1){
+            product.valorCantidad-- ;
+        }
+        guardadoLocal();
+        pintarCarrito();
+    });
+    let sumar = carritoContenido.querySelector(".sumar")
+    sumar.addEventListener("click", ()=>{
+        product.valorCantidad++;
+        guardadoLocal();
+        pintarCarrito();
+    });
+
+
+    // elimino productos de mi carrito
+    let eliminar = document.createElement ("span");
+    eliminar.innerText="❌";
+    eliminar.className="eliminar-producto";
+    carritoContenido.append(eliminar);
+    eliminar.addEventListener("click", eliminarItems);
+
+});
+    //suma el total de mi recorrida de objeto con el acumulador
+    const total= carrito.reduce ((acc, el ) => acc + el.precio * el.valorCantidad,0);
+    const totalCompra = document.createElement ("div");
+    totalCompra.className="total-content";
+    totalCompra.innerHTML=`Total a pagar: ${total} $`;
+    modalContainer.append(totalCompra);
+};
+
+carritoDeCompras.addEventListener(("click"), pintarCarrito);
+//con esta funcion busco todo lo que esta dentro del carrito por su id al apretar el boton asociado al producto que elegí
+const eliminarItems = () => {
+    const foundId=carrito.find((element) => element.id);
+//capturado en la variable que me devuelve todos los productps distintos qye contebga el id
+    carrito = carrito.filter((Idcarrito) => {
+        return Idcarrito !== foundId;
+    });
+    carritoContenido();
+    guardadoLocal();
+    pintarCarrito();
+}; 
+
+//marcar mi carrito de cantidades
+const carritoContenido=()=>{
+    cantidadCarrito.style.display="block";
+    const carritoLength=carrito.length;
+    localStorage.setItem("carritoLength", JSON.stringify (carritoLength));
+    cantidadCarrito.innerText= JSON.parse(localStorage.getItem("carritoLength"));
+};
+
+
+carritoContenido();
+
+//set item
+const guardadoLocal = () =>{
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+};
+
+//get item
+
+JSON.parse(localStorage.getItem("carrito"));
+
+
+
+
+
+
+
+
+
+
+
+

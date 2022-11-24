@@ -1,46 +1,194 @@
 body{
     margin: 0;
     padding: 0;
-    background-color: rgb(255, 255, 255);
+}
+.nav-container{
+    position: sticky;
+    z-index: 3;
+    top: 0;
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    height: 130px;
+    background-image: linear-gradient(rgb(0, 0, 0),rgb(26, 19, 7));
 }
 
-h1{
+.navbar-logo{
+    justify-self: start;
+    margin-left: 25px;
+    color: white;
+    margin-top: 45px;
+    cursor: pointer;
+}
+
+.ver-carrito{
+    color:  white;
+    font-size: 25px;
+    margin-right: 25px;
+    margin-top: 45px;
+    cursor: pointer;
+}
+.cantidad-carrito{
+    background-color: orange;
+    color: white;
+    border-radius: 55%;
+    font-size: 12px;
+    padding: 5px;
+    top:37px;
+    right: 14px;
+    position: absolute;
+    display: none;
+}
+
+.eliminar-producto{
+    cursor: pointer;
+}
+
+.sumar{
+    cursor:pointer
+}
+
+.restar{
+    cursor: pointer;
+}
+
+.banner{
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    background-image:url(../img/pizza-pomodorini-Cambusa-Vada-960x640.jpg);
+}
+
+.banner-container{
+    text-align: center;
+    padding: 15% 0;
+}
+.banner h1{
+    margin: 0;
+    color: white;
+    text-shadow: 1px 1px 3px rgb(0, 0, 0);
+    font-size: 70px;
+    font-weight: bold;
+}
+.banner p{
+    font-size: 40px;
+    color: wheat;
+    opacity: 0.8;
+    text-shadow: 1px 1px 3px rgb(0, 0, 0);
+}
+
+.shop-content{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 40px;
+    margin-left: 80px;
+    margin-right: 80px;
+    margin-bottom: 40px;
+    background-color: rgb(247, 243, 243);
+}
+.descripcion{
     display: flex;
     justify-content: center;
-    font-size: 60px;
-    color: yellow;
+    margin-top: 40px;
+    text-shadow: 1px 1px 3px rgb(148, 115, 115);
 }
-nav{
+.card{
+    box-shadow: 0 4px 8px rgb(0, 0, 0);
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.card>img{
+    width: 90%;
+    height: 250px;
+}
+
+.price{
+    color: darkgray;
+    font-size: 22px;
+}
+.card button{
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color:white;
+    background-color: black;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 20px;
+}
+
+.card button:hover{
+    background-image: radial-gradient(rgb(128, 126, 0), rgb(68, 56, 33) );
+}
+
+.modal-container{
+    width: 80%;
+    margin: 0 10%;
+    max-height: 88vh;
+    color: rgb(255, 255, 255);
+    background-color: rgb(77, 63, 63);
     display: flex;
-    justify-content:space-between;
+    flex-direction: column;
     align-items: center;
+    position: fixed;
+    overflow: auto;
+    z-index: 9;
+    top: 12vh;
+    
+}
+
+.modal-container::-webkit-scrollbar{
+    display: none;
+}
+
+.modal-header{
+    display: flex;
+    justify-content: space-around;
+    background-color: black;
+    color: rgb(255, 255, 255);
+    width: 100%;
+}
+
+.modal-header-title{
+    justify-self: start;
+}
+.modal-header-button{
+    cursor: pointer;
+}
+.modal-container>div>img{
+    height: 110px;
+    width: 110;
+}
+.modal-container> .modal-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 65%;
+    margin: 8px;
+}
+
+.total-content{
+    font-size: 30px;
+    padding: 25px;
+    text-align: center;
+    padding-top: 25px;
     background-color: black;
 }
-.logo{
-    height: 130px;
-    width: 150px;
 
-}
-li{
+footer{
     display: flex;
-    justify-content: space-evenly;
-    width: 1000px;
-    background-image: linear-gradient(to left, rgb(148, 25, 179), yellow);
-    border: 2px solid rgba(25, 102, 102, 0.562);
-}
-ul{
-    display: flex;
-    align-items: flex-start;
-    text-align: start;
-}
-a{  
-    
-    margin-right: 10px;
-    font-size: large;
-    color: black;
-    text-decoration: none;
-}
-a:hover{
-    
-    color: rgb(0, 4, 255);
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(0, 0, 0);
+    height: 30px;
+    color: white;
 }

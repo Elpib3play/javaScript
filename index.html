@@ -4,23 +4,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Plato del Día</title>
     <link rel="stylesheet" href="./style/style.css">
 </head>
 <body>
-    <div class="flex-container">
-    
-    <nav>
-        <img class="logo" src="./img/platos_del_dia.png" alt="logo Comida">
-        <li>
-            <ul><a href="">Inicio</a></ul>
-            <ul><a href="">Acerca De</a></ul>
-            <ul> <a href="">Preguntas</a></ul>
-            <ul><a href="">Registrate</a></ul>
-            <ul><a href="">Redes sociales</a></ul>
-        </li>
-    </nav>
+
+    <!--navBar-->
+    <div class="nav-container">
+        <nav class="navbar">
+            <h1 class="navbar-logo"> PLATO DEL DIA 🍕</h1>
+            <h1 class="ver-carrito" id="verCarrito">Mi pedido 🛒<spam id="cantidadCarrito" class="cantidad-carrito"></spam></h1>
+        </nav>
     </div>
+    <!--Banner-->
+    <div class="banner">
+        <div class="banner-container">
+            <h1>PLATO DEL DIA</h1>
+            <p>El lugar del encuentro para el buen gusto ...</p>
+        </div>
+    </div>
+
+    <div ><h1 class="descripcion">Nuestros Platos</h1></div>
+
+    <!--contenido de compras-->
+    
+    <div id="shopContent" class="shop-content "> </div>
+        
+    <!--contenido de modal-->
+
+    <div id="modal-container" class="modal-container"></div>
+
+    <footer class="footer"> <p> Todos los derechos reservados </p></footer>
+
     <script src="./js/main.js"></script>
 </body>
 </html>
