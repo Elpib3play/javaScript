@@ -22,6 +22,17 @@ body{
     cursor: pointer;
 }
 
+
+.listadoProductos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+}
+
 .ver-carrito{
     color:  white;
     font-size: 25px;

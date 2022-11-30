@@ -10,28 +10,28 @@ const productos = [{
     id:1,
     src:"https://media.istockphoto.com/id/848661766/es/foto/la-fresca-pizza-al-horno-con-salami-en-plato-blanco.jpg?s=612x612&w=0&k=20&c=GK_NG_6b7UpMNdOcU6_a-IJdKQoMEk4Jg6mxie468lU=",
     valorCantidad:1, 
-  },
-  {
+    },
+    {
     tipo_comida: "Empanada",
     precio: 300,
     id:2,
     src:"https://media.istockphoto.com/id/1171946922/es/foto/empanadas.jpg?b=1&s=170667a&w=0&k=20&c=O59fCoJ8vOkSBi3jiXP-Cp9ynklskHO5Z7mD8wPl_nk=" ,  
     valorCantidad:1,
-  },
-  {
-  tipo_comida: "Milanesa",
-  precio: 2000,
-  id:3,
-  src:"https://media.istockphoto.com/id/1389082623/es/foto/chuleta-de-cerdo-al-horno-con-patatas-fritas.jpg?s=612x612&w=0&k=20&c=cQcWxm3rv9T09oxE0d0-tm5XnBZftDEX-ZxWI7dBl7w=" ,  
-  valorCantidad:1,
- },
- {
+    },
+    {
+    tipo_comida: "Milanesa",
+        precio: 2000,
+    id:3,
+    src:"https://media.istockphoto.com/id/1389082623/es/foto/chuleta-de-cerdo-al-horno-con-patatas-fritas.jpg?s=612x612&w=0&k=20&c=cQcWxm3rv9T09oxE0d0-tm5XnBZftDEX-ZxWI7dBl7w=" ,  
+    valorCantidad:1,
+    },
+    {
     tipo_comida: "Ravioles",
     precio: 1800,
     id:4,
     src:"https://media.istockphoto.com/id/154961079/es/foto/ravioles-de-carne-de-res-en-salsa-de-tomate-carne.jpg?s=612x612&w=0&k=20&c=waYJ46ccfTRhe9P6BCCMY_TD970XV3FmZZRe8O1HrNA=" ,  
     valorCantidad:1,
-   },
+    },
 ];
 
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
@@ -49,6 +49,7 @@ productos.forEach((product) => {
     //ingreso todo lo que esta en mi foreach
     shopContent.append(content);
 
+    
     let comprar=document.createElement ("button");
     comprar.innerText="comprar";
     comprar.className="comprar";
@@ -82,6 +83,25 @@ productos.forEach((product) => {
     });
 });
 
+// Toastify
+const toastify=document.querySelector(".shop-content");
+toastify.addEventListener("click",() =>{
+    Toastify({
+        text: "Has agregado un producto",
+        duration: 3000,
+        destination: "",
+        newWindow: true,
+        close: true,
+        gravity: "bottom", // `top` or `bottom`
+        position: "right", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+        background: "linear-gradient(to right, #00b09b, #96c93d)",
+        },
+        onClick: function(){} // Callback after click
+    }).showToast();
+})
+    
 
 //carrito de compras
 
@@ -104,6 +124,7 @@ const pintarCarrito = () =>{
     modalbutton.innerText = "X";
     modalbutton.className= "modal-header-button";
     modalHeader.append(modalbutton);
+
     
     //cierro mi modal
     modalbutton.addEventListener("click" ,() =>{
@@ -190,15 +211,3 @@ const guardadoLocal = () =>{
 //get item
 
 JSON.parse(localStorage.getItem("carrito"));
-
-
-
-
-
-
-
-
-
-
-
-
