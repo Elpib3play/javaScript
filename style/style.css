@@ -18,7 +18,7 @@ body{
     justify-self: start;
     margin-left: 25px;
     color: white;
-    margin-top: 45px;
+    margin-top: 54px;
     cursor: pointer;
 }
 
@@ -31,8 +31,24 @@ body{
     color: white;
     cursor: pointer;
     text-decoration: none;
+    background-color: rgb(247, 243, 243);
 }
-
+ul.lista-productos{ 
+    text-align: center;
+    list-style: none;
+    margin-top: 30px;
+    margin-bottom: 60px;
+    margin-right: 45px;
+    
+}
+li{
+    background-color: rgb(247, 243, 243);
+    padding: 20px;
+}
+.plt{
+    background-color:rgb(255, 184, 53) ;
+    border-radius: 30px;
+}
 .ver-carrito{
     color:  white;
     font-size: 25px;
@@ -87,6 +103,11 @@ body{
     color: wheat;
     opacity: 0.8;
     text-shadow: 1px 1px 3px rgb(0, 0, 0);
+}
+.descripcion{
+    text-decoration: none;
+    text-shadow: 20px;
+    text-shadow: 1px 1px 3px rgb(148, 115, 115);
 }
 
 .shop-content{
@@ -193,6 +214,15 @@ body{
     text-align: center;
     padding-top: 25px;
     background-color: black;
+}
+
+.test{
+    display: flex;
+    text-align: center;
+    text-decoration: none;
+    flex-direction: column;
+    margin-top: 30px;
+    background-color: rgb(255, 255, 255);
 }
 
 footer{

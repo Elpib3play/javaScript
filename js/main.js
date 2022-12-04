@@ -142,6 +142,7 @@ const pintarCarrito = () =>{
         <p>Cantidad: ${product.valorCantidad}</p>
         <span class="sumar"> + </span>
         <p>Total: ${product.valorCantidad*product.precio}</p>
+        
     `;
 
     modalContainer.append(carritoContenido);
@@ -176,6 +177,7 @@ const pintarCarrito = () =>{
     const totalCompra = document.createElement ("div");
     totalCompra.className="total-content";
     totalCompra.innerHTML=`Total a pagar: ${total} $`;
+    
     modalContainer.append(totalCompra);
 };
 
