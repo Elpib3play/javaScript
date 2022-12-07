@@ -143,6 +143,7 @@ const pintarCarrito = () =>{
         <span class="sumar"> + </span>
         <p>Total: ${product.valorCantidad*product.precio}</p>
         
+        
     `;
 
     modalContainer.append(carritoContenido);
@@ -176,10 +177,32 @@ const pintarCarrito = () =>{
     const total= carrito.reduce ((acc, el ) => acc + el.precio * el.valorCantidad,0);
     const totalCompra = document.createElement ("div");
     totalCompra.className="total-content";
-    totalCompra.innerHTML=`Total a pagar: ${total} $`;
-    
+    totalCompra.innerHTML=`Total a pagar: ${total} $ <button id="boton" >Finalizar compra</button>`
+
     modalContainer.append(totalCompra);
+    let boton=document.getElementById("boton");
+    boton.onclick=finalizar;
+    function finalizar(){
+        if (true){
+            Swal.fire({
+                title: 'Deseas Realizaar la compra?',
+                showDenyButton: true,
+                showCancelButton: true,
+                confirmButtonText: 'Realizar Compra',
+                denyButtonText: `Seguir Comprando`,
+            }).then((result) => {
+                /* Read more about isConfirmed, isDenied below */
+                if (result.isConfirmed) {
+                Swal.fire('Hemos tomado su pedido!', '', '')
+                } else if (result.isDenied) {
+                Swal.fire('Aún no se ha completado la compra', '', 'Seguir comprando?')
+                }
+            });
+        }
+    }
+
 };
+
 
 carritoDeCompras.addEventListener(("click"), pintarCarrito);
 //con esta funcion busco todo lo que esta dentro del carrito por su id al apretar el boton asociado al producto que elegí
@@ -201,6 +224,10 @@ const carritoContenido=()=>{
     localStorage.setItem("carritoLength", JSON.stringify (carritoLength));
     cantidadCarrito.innerText= JSON.parse(localStorage.getItem("carritoLength"));
 };
+
+const showAlert = ()=> {
+    alert("comprar");
+}
 
 
 carritoContenido();
