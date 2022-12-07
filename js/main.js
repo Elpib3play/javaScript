@@ -193,7 +193,7 @@ const pintarCarrito = () =>{
             }).then((result) => {
                 /* Read more about isConfirmed, isDenied below */
                 if (result.isConfirmed) {
-                Swal.fire('Hemos tomado su pedido!', '', 'Gracias por confiar en nosotros!')
+                Swal.fire('Hemos tomado su pedido! Gracias por confiar en nosotros!', '', '')
                 } else if (result.isDenied) {
                 Swal.fire('Aún no se ha completado la compra', '', 'Seguir comprando?')
                 }
