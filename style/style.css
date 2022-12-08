@@ -13,8 +13,11 @@ body{
     height: 130px;
     background-image: linear-gradient(rgb(0, 0, 0),rgb(26, 19, 7));
 }
+.home{
+    text-decoration: none;
+}
+h1.navbar-logo{
 
-.navbar-logo{
     justify-self: start;
     margin-left: 25px;
     color: white;
@@ -107,7 +110,16 @@ li{
 .descripcion{
     text-decoration: none;
     text-shadow: 20px;
-    text-shadow: 1px 1px 3px rgb(148, 115, 115);
+    
+}
+.PlatosJson{
+    color: black;
+    text-shadow: 1px 1px 3px rgb(255, 192, 75);
+}
+.PlatosJson:hover{
+    color: black;
+    border-radius: 10px;
+    background-color: rgb(184, 169, 40);
 }
 
 .shop-content{
