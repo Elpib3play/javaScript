@@ -196,6 +196,7 @@ const pintarCarrito = () =>{
                 Swal.fire('Hemos tomado su pedido! Gracias por confiar en nosotros!', '', '')
                 if (boton=true){
                     modalContainer.style.display="none";
+                    cantidadCarrito.style.display="none";
                 }
                 } else if (result.isDenied) {
                 Swal.fire('Aún no se ha completado la compra', '', 'Seguir comprando?')
