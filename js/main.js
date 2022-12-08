@@ -194,15 +194,18 @@ const pintarCarrito = () =>{
                 /* Read more about isConfirmed, isDenied below */
                 if (result.isConfirmed) {
                 Swal.fire('Hemos tomado su pedido! Gracias por confiar en nosotros!', '', '')
+                if (boton=true){
+                    modalContainer.style.display="none";
+                }
                 } else if (result.isDenied) {
                 Swal.fire('Aún no se ha completado la compra', '', 'Seguir comprando?')
+                modalContainer.style.display="none";
                 }
             });
         }
     }
 
 };
-
 
 carritoDeCompras.addEventListener(("click"), pintarCarrito);
 //con esta funcion busco todo lo que esta dentro del carrito por su id al apretar el boton asociado al producto que elegí
