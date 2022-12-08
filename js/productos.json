@@ -1,26 +1,22 @@
 [{
     "tipo_comida": "Pizza",
     "precio": 1500,
-    "id":1,
     "src":"https://media.istockphoto.com/id/848661766/es/foto/la-fresca-pizza-al-horno-con-salami-en-plato-blanco.jpg?s=612x612&w=0&k=20&c=GK_NG_6b7UpMNdOcU6_a-IJdKQoMEk4Jg6mxie468lU="
 },
 {
     
     "tipo_comida": "Empanada",
     "precio": 300,
-    "id":2,
     "src":"https://media.istockphoto.com/id/1171946922/es/foto/empanadas.jpg?b=1&s=170667a&w=0&k=20&c=O59fCoJ8vOkSBi3jiXP-Cp9ynklskHO5Z7mD8wPl_nk="   
 },
 {
     "tipo_comida":"Milanesa",
     "precio": 2000,
-    "id":3,
     "src":"https://media.istockphoto.com/id/1389082623/es/foto/chuleta-de-cerdo-al-horno-con-patatas-fritas.jpg?s=612x612&w=0&k=20&c=cQcWxm3rv9T09oxE0d0-tm5XnBZftDEX-ZxWI7dBl7w="  
 },
 {
     "tipo_comida": "Ravioles",
     "precio": 1800,
-    "id":4,
     "src":"https://media.istockphoto.com/id/154961079/es/foto/ravioles-de-carne-de-res-en-salsa-de-tomate-carne.jpg?s=612x612&w=0&k=20&c=waYJ46ccfTRhe9P6BCCMY_TD970XV3FmZZRe8O1HrNA=" 
 }
 ]

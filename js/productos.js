@@ -1,15 +1,48 @@
-const listaProductos= document.querySelector(".lista-productos");
+const renderArray = (listaProductos)=>{
+    const contenido = document.querySelector('#contenido')
+    let html = "";
+    listaProductos.forEach(comida => {
+        html += `
+            <p>Tipo de Plato: ${comida.tipo_comida}</p>
+            <p>Precio: ${comida.precio}</p>
+            <img src="${comida.src}">
+            <hr>
+        `
+    });
+    contenido.innerHTML = html
+}
 
-fetch ("../js/productos.json")
-    .then(response=> response.json())
-    .then(data=>{
-        mostrarProductos(data);
+const obtenerDatosTXT = () =>{
+    fetch('../js/data.txt')
+    .then((respuesta)=>{
+        return respuesta.text()
     })
+    .then((datos)=>{
+        console.log(datos)
+        document.querySelector('#contenido').textContent = datos
+    })
+    .catch((error)=> {
+        console.log(error)
+    })
+}
 
-    function mostrarProductos(productos){
-        productos.forEach(producto => {
-            const li=document.createElement("li");
-            li.innerText = producto.tipo_comida + " - $" + producto.precio;
-            listaProductos.append(li);
-        });
-    }
+const obtenerDatosArray = () =>{
+    fetch('../js/productos.json')
+    .then((respuesta)=>{
+        //console.log(respuesta)
+        return respuesta.json()
+        //document.querySelector('#contenido').textContent = respuesta.text()
+    })
+    .then((datos)=>{
+        renderArray(datos)
+    })
+    .catch((error)=> {
+        console.log(error)
+    })
+}
+
+const btnTxt = document.querySelector('#btnTxt')
+const btnArray = document.querySelector('#btnArray')
+btnTxt.addEventListener('click', obtenerDatosTXT)
+btnArray.addEventListener('click', obtenerDatosArray)
+
