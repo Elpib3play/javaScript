@@ -2,29 +2,31 @@ body{
     margin: 0;
     padding: 0;
 }
+
 .nav-container{
     position: sticky;
     z-index: 3;
     top: 0;
 }
+
 .navbar{
     display: flex;
     justify-content: space-between;
     height: 130px;
     background-image: linear-gradient(rgb(0, 0, 0),rgb(26, 19, 7));
 }
+
 .home{
     text-decoration: none;
 }
-h1.navbar-logo{
 
+h1.navbar-logo{
     justify-self: start;
     margin-left: 25px;
     color: white;
     margin-top: 54px;
     cursor: pointer;
 }
-
 
 .listadoProductos{
     display: flex;
@@ -94,6 +96,7 @@ li{
     text-align: center;
     padding: 15% 0;
 }
+
 .banner h1{
     margin: 0;
     color: white;
@@ -101,6 +104,7 @@ li{
     font-size: 70px;
     font-weight: bold;
 }
+
 .banner p{
     font-size: 40px;
     color: wheat;
@@ -112,10 +116,12 @@ li{
     text-shadow: 20px;
     
 }
+
 .PlatosJson{
     color: black;
     text-shadow: 1px 1px 3px rgb(255, 192, 75);
 }
+
 .PlatosJson:hover{
     color: black;
     border-radius: 10px;
@@ -235,7 +241,6 @@ li{
     border-radius: 5px;
     background-color: rgb(233, 212, 167);    
 }
-
 #cont-botones{
     display: flex;
     flex-direction: column;
@@ -251,7 +256,15 @@ img{
     width: 200px;
 }
 #btnTxt{
+    padding: 10px;
     margin: 30px;
+    border: solid 3px black;
+}
+
+#btnArray{
+    padding: 10px;
+    margin: 30px;
+    border: solid 3px black;
 }
 
 footer{
@@ -264,6 +277,7 @@ footer{
 }
 
 @media screen and (max-width: 919px) {
+
 
 .modal-container{
     width: 80%;
