@@ -221,16 +221,21 @@ li{
 }
 .finCompra{
     border-radius: 5px;
-    background-color: rgb(233, 212, 167);;    
+    background-color: rgb(233, 212, 167);    
 }
 
-.test{
+#cont-botones{
     display: flex;
-    text-align: center;
-    text-decoration: none;
     flex-direction: column;
-    margin-top: 30px;
-    background-color: rgb(255, 255, 255);
+    align-items: center;
+    justify-content: center;
+    padding: 10px; 
+}
+img{
+    align-items: center;
+    align-self: center;
+    height: 200px;
+    width: 200px;
 }
 
 footer{
